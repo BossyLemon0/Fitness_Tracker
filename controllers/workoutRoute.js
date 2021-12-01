@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const Workouts  = require('../models/workouts')
+const Workouts = require('../models/workouts')
 
 //TODO: create two get routes, one gets the last workout and the
 // other gets workouts in range
@@ -8,7 +8,7 @@ const Workouts  = require('../models/workouts')
 router.get('/workouts', (req,res) =>{
  Workouts.aggregate([{
     $addFields : {
-        fullDuration : { $sum: "$duration"}
+        fullDuration : { $sum: "$exercises.duration"}
     }
 }
 ]).then((workoutInfo)=>{
@@ -34,6 +34,7 @@ Workouts.aggregate([{
 router.post('/workouts', (req,res)=>{
 Workouts.create(req.body)
 .then(workoutInfo => {
+    console.log(workoutInfo)
     res.json(workoutInfo)
 }).catch(err =>{
     res.status(400).json(err)
@@ -41,12 +42,13 @@ Workouts.create(req.body)
 })
 //TODO: create a Put route to add exercises
 router.put('/workouts/:id', (req,res)=>{
-    Workouts.findByIdAndUpdate({_id : req.params.id}, {$push: { "exercices" : req.body}})
+    Workouts.findByIdAndUpdate({_id : req.params.id}, { $push: { exercises : req.body}})
     .then((workoutInfo) => {
+        console.log(workoutInfo)
         res.json(workoutInfo)
     })
     .catch(err =>{
-        res.status(500).json(err)
+        res.status(400).json(err)
     })
 })
 

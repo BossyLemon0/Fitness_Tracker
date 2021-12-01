@@ -7,7 +7,12 @@ const API = {
       console.log(err)
     }
     const json = await res.json();
-
+    if(json){
+      console.log("working")
+    }
+    else{
+      consol.log('not working')
+    }
     return json[json.length - 1];
   },
   async addExercise(data) {
@@ -20,7 +25,12 @@ const API = {
     });
 
     const json = await res.json();
-
+    if(json){
+      console.log(json)
+    }
+    else{
+      consol.log('not working')
+    }
     return json;
   },
   async createWorkout(data = {}) {
@@ -31,14 +41,24 @@ const API = {
     });
 
     const json = await res.json();
-
+    if(json){
+      console.log(json)
+    }
+    else{
+      consol.log('not working')
+    }
     return json;
   },
 
   async getWorkoutsInRange() {
     const res = await fetch(`/api/workouts/range`);
     const json = await res.json();
-
+    if(json){
+      console.log("working")
+    }
+    else{
+      consol.log('not working')
+    }
     return json;
   },
 };
