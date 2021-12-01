@@ -7,7 +7,7 @@ const Workouts  = require('../models/workouts')
 
 router.get('/workouts', (req,res) =>{
  Workouts.aggregate([{
-    addFields : {
+    $addFields : {
         fullDuration : { $sum: "$duration"}
     }
 }
@@ -41,7 +41,7 @@ Workouts.create(req.body)
 })
 //TODO: create a Put route to add exercises
 router.put('/workouts/:id', (req,res)=>{
-    Workouts.findByIdAndUpdate({_id : req.params.id}, {$push: { exercices: req.body}})
+    Workouts.findByIdAndUpdate({_id : req.params.id}, {$push: { "exercices" : req.body}})
     .then((workoutInfo) => {
         res.json(workoutInfo)
     })
