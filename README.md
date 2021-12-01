@@ -24,7 +24,7 @@ No installation required.
 
 Choose a new workout, create a new exercise and fill out the required fields in the form. Add another workout, head home, or view your workouts on the dashboard
 
-![Application form]()
+![Application form](./Images/fitness_tracker_form.png)
 
 ![Application dashboard](./Images/FItness_dashboard.png)
 
