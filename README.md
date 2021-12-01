@@ -26,7 +26,7 @@ Choose a new workout, create a new exercise and fill out the required fields in 
 
 ![Application form]()
 
-![Application dashboard]()
+![Application dashboard](./Images/FItness_dashboard.png)
 
 [Deployed website](https://vast-everglades-56807.herokuapp.com/?id=61a6ead5eb8b17001691abb5)
 
