@@ -42,7 +42,7 @@ Workouts.create(req.body)
 })
 //TODO: create a Put route to add exercises
 router.put('/workouts/:id', (req,res)=>{
-    Workouts.findByIdAndUpdate({_id : req.params.id}, { $push: { exercises : req.body}})
+    Workouts.findByIdAndUpdate({_id : req.params.id}, { $push: { "exercises" : req.body}})
     .then((workoutInfo) => {
         console.log(workoutInfo)
         res.json(workoutInfo)
