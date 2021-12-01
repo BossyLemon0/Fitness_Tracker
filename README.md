@@ -22,11 +22,13 @@ No installation required.
 
 ## Usage
 
-Feel free to contact me through the given social media or take a look at my previous projects.
+Choose a new workout, create a new exercise and fill out the required fields in the form. Add another workout, head home, or view your workouts on the dashboard
 
-![Home Page](./testpage/images/Home_Page.png)
+![Application form]()
 
-[Deployed Portfolio](https://bossylemon0.github.io/My-Portfolio/)
+![Application dashboard]()
+
+[Deployed website](https://vast-everglades-56807.herokuapp.com/?id=61a6ead5eb8b17001691abb5)
 
 
 ## Contribution Guidelines
